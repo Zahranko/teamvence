@@ -116,6 +116,7 @@ h1 {
 
 
 
+
 /* --- HEADER STYLES --- */
 
 header {
@@ -416,14 +417,14 @@ header {
 }
 
 /* =========================================
-   6. COLLECTION / SHOP SECTION
+   6. gallery / SHOP SECTION
    ========================================= */
-.collection-section {
+.gallery-section {
     padding: 100px 10%;
     background-color: #161616; 
 }
 
-.collection-header {
+.gallery-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -432,7 +433,7 @@ header {
     padding-bottom: 20px;
 }
 
-.collection-header h2 {
+.gallery-header h2 {
     font-size: 2.5rem;
     margin: 0;
 }
@@ -509,26 +510,30 @@ header {
 }
 
 /* =========================================
-   FOOTER STYLES
+   NEW FOOTER LAYOUT
    ========================================= */
 .site-footer {
-    background-color: #111; 
+    background-color: #111;
     padding: 80px 10% 30px;
     border-top: 1px solid var(--line-gray);
     font-family: var(--font-body);
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.2fr; 
-    gap: 40px;
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
     margin-bottom: 60px;
 }
 
+/* --- Left Side: Brand & Social --- */
+.footer-brand-side {
+    flex: 0 0 300px; /* Fixed width for the brand side */
+}
 
 .footer-logo {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--accent-color);
     text-decoration: none;
     margin-bottom: 20px;
@@ -537,93 +542,10 @@ header {
 
 .footer-desc {
     color: #888;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.8;
-    max-width: 300px;
-}
-
-
-.footer-col h4 {
-    color: #fff;
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
     margin-bottom: 25px;
-    letter-spacing: 0.5px;
 }
-
-
-.footer-links, 
-.contact-list {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li,
-.contact-list li {
-    margin-bottom: 15px;
-}
-
-.footer-links a {
-    color: #999;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: var(--accent-color);
-    padding-left: 5px; 
-}
-
-
-.contact-list li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #999;
-    font-size: 0.9rem;
-}
-
-.contact-list span {
-    font-size: 1.1rem;
-}
-
-
-.newsletter-form {
-    display: flex;
-    border-bottom: 1px solid #444;
-    margin-bottom: 25px;
-    padding-bottom: 5px;
-    margin-top: 15px;
-}
-
-.newsletter-form input {
-    background: transparent;
-    border: none;
-    color: #fff;
-    width: 100%;
-    outline: none;
-    font-family: var(--font-body);
-    font-size: 0.9rem;
-}
-
-.newsletter-form input::placeholder {
-    color: #555;
-}
-
-.newsletter-form button {
-    background: transparent;
-    border: none;
-    color: var(--accent-color);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.newsletter-form button:hover {
-    transform: translateX(5px);
-}
-
 
 .social-links {
     display: flex;
@@ -634,17 +556,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border: 1px solid #333;
     border-radius: 50%;
     color: #fff;
     transition: all 0.3s ease;
-}
-
-.social-links a svg {
-    width: 18px;
-    height: 18px;
 }
 
 .social-links a:hover {
@@ -653,7 +570,55 @@ header {
     background-color: rgba(197, 160, 89, 0.1);
 }
 
+/* --- Right Side: Directory Grid --- */
+.footer-directory-side {
+    flex: 1; /* Takes up remaining space */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 30px;
+}
 
+.footer-dir-col h3 {
+    font-family: var(--font-heading);
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Gold underline under headings */
+.footer-dir-col h3::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent-color);
+    margin-top: 10px;
+}
+
+.footer-dir-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-dir-col li {
+    margin-bottom: 12px;
+}
+
+.footer-dir-col a {
+    text-decoration: none;
+    color: #888;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.footer-dir-col a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+/* --- Footer Bottom --- */
 .footer-bottom {
     border-top: 1px solid #222;
     padding-top: 30px;
@@ -664,15 +629,14 @@ header {
     gap: 20px;
 }
 
-.footer-bottom p {
+.footer-bottom p, 
+.legal-links a {
     color: #555;
     font-size: 0.85rem;
 }
 
 .legal-links a {
-    color: #555;
     text-decoration: none;
-    font-size: 0.85rem;
     margin-left: 20px;
     transition: color 0.3s;
 }
@@ -681,42 +645,34 @@ header {
     color: var(--accent-color);
 }
 
+/* --- RESPONSIVE FOOTER --- */
 
-@media (max-width: 1024px) {
-    .footer-content {
-        grid-template-columns: 1fr 1fr; 
-    }
-}
-
-@media (max-width: 600px) {
-    .footer-content {
-        grid-template-columns: 1fr; 
-        text-align: center;
+@media (max-width: 1200px) {
+    /* Stack Brand on top of Directory */
+    .footer-wrapper {
+        flex-direction: column;
         gap: 50px;
+    }
+    
+    .footer-brand-side {
+        flex: auto;
+        max-width: 100%;
+        text-align: center;
     }
 
     .footer-desc {
-        margin: 0 auto;
-    }
-
-    .contact-list li {
-        justify-content: center;
+        max-width: 600px;
+        margin: 0 auto 25px auto;
     }
 
     .social-links {
         justify-content: center;
     }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .legal-links a {
-        margin: 0 10px;
+    
+    .footer-dir-col h3::after {
+        margin: 10px auto 0 auto; /* Center underline if needed, or remove auto to keep left */
     }
 }
-
 /* =========================================
    ABOUT SECTION (Updated to match Repair)
    ========================================= */
@@ -843,7 +799,8 @@ header {
     }
 }
 
-@media (max-width: 768px) {
+
+@media (max-width: 480px) {
 
 
     header {
@@ -1040,7 +997,7 @@ header {
         grid-template-columns: 1fr; 
     }
 
-    .collection-header {
+    .gallery-header {
         flex-direction: column;
         gap: 10px;
         text-align: center;
@@ -1054,5 +1011,14 @@ header {
     .product-card {
         max-width: 400px;
         margin: 0 auto;
+    }
+    .footer-directory-side {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .footer-dir-col h3::after {
+        margin: 10px auto 0 auto;
     }
 }
