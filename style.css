@@ -1469,16 +1469,6 @@ header {
         display: block;
     }
 
-    header {
-        padding: 20px 40px;
-    }
-
-   
-    .cta-btn {
-        display: block; 
-        padding: 10px 20px;
-        font-size: 12px;
-    }
 
     
     .hero {
@@ -1533,5 +1523,6 @@ header {
         padding: 12px 25px;
     }
 }
+
 
 
