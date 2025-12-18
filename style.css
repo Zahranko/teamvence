@@ -1402,7 +1402,7 @@ header {
 }
 /* --- IPAD & FOLDABLE OPTIMIZATION --- */
 @media (min-width: 600px) and (max-width: 1024px) {
-     header {
+    header {
         padding: 20px 25px; 
         justify-content: space-between;
     }
@@ -1523,7 +1523,3 @@ header {
         padding: 12px 25px;
     }
 }
-
-
-
-
