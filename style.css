@@ -1401,7 +1401,7 @@ header {
     }
 }
 /* --- IPAD & FOLDABLE OPTIMIZATION --- */
-@media (min-width: 600px) and (max-width: 1024px) {
+@media (min-width: 600px) and (max-width: 1200px) {
     
     header {
         padding: 20px 40px;
@@ -1467,3 +1467,4 @@ header {
         padding: 12px 25px;
     }
 }
+
